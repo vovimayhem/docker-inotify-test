@@ -1,0 +1,4 @@
+/test_folder
+/.dockerignore
+/.git*
+/Dockerfile

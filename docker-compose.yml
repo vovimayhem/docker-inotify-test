@@ -1,0 +1,10 @@
+version: "2.4"
+
+services:
+  inotify_mon:
+    image: vovimayhem/inotify-test:latest
+    build:
+      context: .
+    volumes:
+    - ./test_folder:/test_folder
+    command: inotifywait -r -m --format "%e %f" /test_folder
