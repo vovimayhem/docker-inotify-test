@@ -1,10 +1,11 @@
 version: "2.4"
 
 services:
-  inotify_mon:
+  monitor:
     image: vovimayhem/inotify-test:latest
-    build:
-      context: .
+    build: { context: . }
     volumes:
     - ./test_folder:/test_folder
+    stdin_open: true
+    tty: true
     command: inotifywait -r -m --format "%e %f" /test_folder
